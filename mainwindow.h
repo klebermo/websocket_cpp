@@ -17,10 +17,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-
+    void on_connectBtn_clicked();
+    void on_sendBtn_clicked();
+    void onStateChanged(QAbstractSocket::SocketState state);
 private:
     Ui::MainWindow *ui;
     QWebSocket m_webSocket;
+    void enableWidgets(bool state);
 };
 #endif // MAINWINDOW_H
